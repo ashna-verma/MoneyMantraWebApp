@@ -1,4 +1,5 @@
 import axios from "axios";
+import { BASE_URL } from "./apiEndpoints";
 
 //JavaScript library used to make HTTP requests from your frontend or backend.
 const axiosConfig = axios.create({
@@ -17,7 +18,9 @@ const excludeEndpoints = ["/login", "/register", "/status", "/activate", "/healt
 //request interceptor
 axiosConfig.interceptors.request.use((config) => {
     const shouldSkipToken = excludeEndpoints.some((endpoint) => {
-        config.url?.includes(endpoint)      //boolean
+        config.url?.includes(endpoint);      //boolean
+        console.log("URL:", config.url);
+        console.log("Auth header:", config.headers.Authorization);
     });
 
     if (!shouldSkipToken){
@@ -48,3 +51,5 @@ axiosConfig.interceptors.response.use((response) => {
     }
     return Promise.reject(error);
 });
+
+export default axiosConfig;
