@@ -13,3 +13,22 @@ body{
   box-shadow: inset;
   border-radius: 10px;
 }
+
+.card {
+  background-color: #ffffff;
+  border-radius: 1rem;        /* rounded corners */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);  /* elevated feel */
+  border: 1px solid #f0f0f0; /* subtle border */
+}
+
+.add-btn{
+  border: 1px solid #187d3d;      /* green border */
+  color: #187d3d;                  /* green text */
+  background-color: #c7ffdc;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  font-weight: 1000;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
