@@ -21,6 +21,21 @@ body{
   border: 1px solid #f0f0f0; /* subtle border */
 }
 
+.card-btn{
+  background-color: #f0f0f0;  /* green background */
+  color: black;                /* white text */
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: purple 0.2s ease;
+}
+.card-btn:hover {
+  color: purple;
+}
 .add-btn{
   border: 1px solid #187d3d;      /* green border */
   color: #187d3d;                  /* green text */
@@ -29,6 +44,9 @@ body{
   padding: 8px 16px;
   font-size: 0.875rem;
   font-weight: 1000;
+  display: flex;
+  align-items: center;
+  gap: 2px;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
