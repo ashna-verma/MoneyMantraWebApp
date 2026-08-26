@@ -1,5 +1,5 @@
-//export const BASE_URL = "https://moneymantra.onrender.com/api/v1.0";
-export const BASE_URL = "http://localhost:8080/api/v1.0";
+export const BASE_URL = "https://moneymantra.onrender.com/api/v1.0";
+//export const BASE_URL = "http://localhost:8080/api/v1.0";
 
 const CLOUDINARY_CLOUD_NAME = "duaq2t3uq";
 
