@@ -11,6 +11,7 @@ import toast from "react-hot-toast";
 import RecentTransactions from "../components/RecentTransactions";
 import FinanceOverview from "../components/FinanceOverview";
 import Transactions from "../components/Transactions";
+import AIInsightsCard from "../components/AiInsightsCard";
 
 const Home = () => {
     useUser();
@@ -69,35 +70,46 @@ const Home = () => {
                             color="bg-red-800"
                         />
                     </div>
+                    {/* Recent Transactions + Finance Overview */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                        {/* Recent Transactions */}
+
                         <RecentTransactions
                             transactions={dashboardData?.recentTransactions}
                             onMore={() => navigate("/expense")}
                         />
 
-                        {/* Finance Overview Chart */}
                         <FinanceOverview
-                            totalBalance ={dashboardData?.totalBalance || 0}
-                            totalIncome = {dashboardData?.totalIncome || 0}
-                            totalExpense = {dashboardData?.totalExpense || 0}
+                            totalBalance={dashboardData?.totalBalance || 0}
+                            totalIncome={dashboardData?.totalIncome || 0}
+                            totalExpense={dashboardData?.totalExpense || 0}
                         />
 
-                        {/* Expense Transactions */}
+                    </div>
+
+
+                    {/* AI Financial Insights */}
+                    <div className="mt-6">
+                        <AIInsightsCard />
+                    </div>
+
+
+                    {/* Recent Expenses + Income */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+
                         <Transactions
-                            transactions = {dashboardData?.recent5Expenses || []}
+                            transactions={dashboardData?.recent5Expenses || []}
                             onMore={() => navigate("/expense")}
-                            type= "expense"
-                            title= "Recent Expenses"
+                            type="expense"
+                            title="Recent Expenses"
                         />
 
-                        {/* Income Transactions */}
                         <Transactions
-                            transactions = {dashboardData?.recent5Incomes || []}
+                            transactions={dashboardData?.recent5Incomes || []}
                             onMore={() => navigate("/income")}
-                            type= "income"
-                            title= "Recent Incomes"
+                            type="income"
+                            title="Recent Incomes"
                         />
+
                     </div>
                 </div>
             </Dashboard>
